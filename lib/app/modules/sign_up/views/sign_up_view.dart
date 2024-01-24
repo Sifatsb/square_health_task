@@ -9,11 +9,10 @@ import 'package:square_health_task/app/utilities/widgets/common_widgets/custom_b
 import 'package:square_health_task/app/utilities/widgets/common_widgets/custom_text_form_field.dart';
 import 'package:square_health_task/app/utilities/widgets/common_widgets/primary_button.dart';
 
-import '../controllers/sign_in_controller.dart';
+import '../controllers/sign_up_controller.dart';
 
-class SignInView extends GetView<SignInController> {
-  const SignInView({Key? key}) : super(key: key);
-
+class SignUpView extends GetView<SignUpController> {
+  const SignUpView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +38,9 @@ class SignInView extends GetView<SignInController> {
                     height: 100,
                   ),
                 ),
-                const CustomBackButton(),
+
+               const CustomBackButton(),
+
               ],
             ),
             Padding(
@@ -54,6 +55,22 @@ class SignInView extends GetView<SignInController> {
                     style: AppTextStyle.styleFont32BlueW600,
                   ),
                   42.verticalSpacing,
+
+                  /// Name Field
+                  const Text(
+                    'Name',
+                    style: AppTextStyle.primaryTextStyle,
+                  ),
+                  14.verticalSpacing,
+                  CustomTextFormField(
+                    controller: controller.nameTextController,
+                    fillColor: Colors.white,
+                    focusBorderActive: true,
+                    enableBorderActive: true,
+                    hintText: "Type name here...",
+                    textInputType: TextInputType.text,
+                  ),
+                  28.verticalSpacing,
 
                   /// Email Field
                   const Text(
@@ -86,35 +103,33 @@ class SignInView extends GetView<SignInController> {
                     hintText: "Type password here...",
                     textInputType: TextInputType.text,
                   ),
+                  28.verticalSpacing,
+
+                  /// Retype Password Field
+                  const Text(
+                    'Password',
+                    style: AppTextStyle.primaryTextStyle,
+                  ),
+                  14.verticalSpacing,
+                  CustomTextFormField(
+                    controller: controller.reTypePasswordTextController,
+                    fillColor: Colors.white,
+                    focusBorderActive: true,
+                    enableBorderActive: true,
+                    obsCureText: true,
+                    hintText: "Retype password here...",
+                    textInputType: TextInputType.text,
+                  ),
 
                   /// Sign in Button
                   28.verticalSpacing,
                   PrimaryButton(
                     height: 54,
                     onTap: () {},
-                    text: 'Sign in',
+                    text: 'Sign up',
                   ),
 
-                  28.verticalSpacing,
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.toNamed(Routes.SIGN_UP);
-                      },
-                      child: RichText(
-                        text: const TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: 'Don\'t have an account? ',
-                                style: AppTextStyle.secondaryTextStyle),
-                            TextSpan(
-                                text: 'Sign up',
-                                style: AppTextStyle.secondaryAuthTextStyle)
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+
                 ],
               ),
             )
