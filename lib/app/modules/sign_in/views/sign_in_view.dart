@@ -7,10 +7,10 @@ import 'package:square_health_task/app/utilities/extensions/widget.extensions.da
 import 'package:square_health_task/app/utilities/widgets/common_widgets/custom_text_form_field.dart';
 import 'package:square_health_task/app/utilities/widgets/common_widgets/primary_button.dart';
 
-import '../controllers/login_controller.dart';
+import '../controllers/sign_in_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+class SignInView extends GetView<SignInController> {
+  const SignInView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

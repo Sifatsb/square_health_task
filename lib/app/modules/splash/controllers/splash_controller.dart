@@ -32,13 +32,9 @@ class SplashController extends GetxController with GetTickerProviderStateMixin {
     await 3000.milliseconds.delay();
 
     if (authDatabase.auth()) {
-
       Get.offAndToNamed(Routes.HOME);
-
     } else {
-      Get.offAndToNamed(Routes.LOGIN);
+      Get.offAndToNamed(Routes.SIGNIN);
     }
   }
-
-
 }

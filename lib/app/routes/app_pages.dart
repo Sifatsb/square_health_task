@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
+import 'package:square_health_task/app/modules/sign_in/bindings/sign_in_binding.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/login/bindings/login_binding.dart';
-import '../modules/login/views/login_view.dart';
+import '../modules/sign_in/views/sign_in_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -26,9 +26,9 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: _Paths.LOGIN,
-      page: () => const LoginView(),
-      binding: LoginBinding(),
+      name: _Paths.SIGNIN,
+      page: () => const SignInView(),
+      binding: SignInBinding(),
     ),
   ];
 }
