@@ -30,6 +30,7 @@ class SplashController extends GetxController with GetTickerProviderStateMixin {
   void navNextPage() async {
     AuthDatabase authDatabase = AuthDatabase.instance;
     await 3000.milliseconds.delay();
+    String token = authDatabase.getToken() ?? '';
 
     if (authDatabase.auth()) {
       Get.offAndToNamed(Routes.HOME);

@@ -93,5 +93,4 @@ class AuthDBKeys {
   static const dbName = 'authDb';
   static const data = 'userInfo';
   static const token = 'token';
-  static const notificationCount = 'notification_count';
 }

@@ -44,7 +44,10 @@ class SignInController extends GetxController {
         bool status = await AuthDatabase.instance.saveAuthInfo(
           profileInfoModelModel: profileInfoModel,
         );
-        Get.toNamed(Routes.HOME);
+        if(status){
+          Get.toNamed(Routes.HOME);
+        }
+
 
       } else{
         loginLoader.value = false;
