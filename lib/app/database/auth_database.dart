@@ -25,11 +25,9 @@ class AuthDatabase {
     try {
       final storage = GetStorage(AuthDBKeys.dbName);
       await storage.write(AuthDBKeys.data, jsonEncode(profileInfoModelModel));
-      if (profileInfoModelModel.data.accessToken != '') {
+      if (profileInfoModelModel.token != '') {
         await storage.write(
-            AuthDBKeys.token, profileInfoModelModel.data.accessToken);
-        await storage.write(AuthDBKeys.notificationCount,
-            profileInfoModelModel.data.unreadNotifications);
+            AuthDBKeys.token, profileInfoModelModel.token);
       }
       await storage.save();
       return true;

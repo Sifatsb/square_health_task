@@ -89,11 +89,21 @@ class SignInView extends GetView<SignInController> {
 
                   /// Sign in Button
                   28.verticalSpacing,
-                  PrimaryButton(
-                    height: 54,
-                    onTap: () {},
-                    text: 'Sign in',
-                  ),
+                  Obx(() => controller.loginLoader.value
+                      ? const Center(child: CircularProgressIndicator())
+                      : PrimaryButton(
+                          height: 54,
+                          onTap: () {
+                            if (controller.validate()) {
+                              controller.getSignIn(
+                                email: controller.emailTextController.text,
+                                password:
+                                    controller.passwordTextController.text,
+                              );
+                            }
+                          },
+                          text: 'Sign in',
+                        )),
 
                   28.verticalSpacing,
                   Center(

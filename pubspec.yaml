@@ -13,6 +13,9 @@ dependencies:
   get: 4.6.6
   get_storage: ^2.1.1
 
+  # Network
+  http: ^1.2.0
+
 
 
   flutter: 
@@ -22,6 +25,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter
+
+
+dependency_overrides:
+  http: ^0.13.5
 
 flutter: 
   uses-material-design: true
